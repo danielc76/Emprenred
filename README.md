@@ -1,12 +1,24 @@
-# React + Vite
+Emprenred
+Emprenred es una tienda online pensada para apoyar a emprendedores y que puedas encontrar productos artesanales, tecnológicos, ropa, alimentos y más, todo hecho con dedicación y pasión.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Qué hace esta app
+Muestra productos de diferentes categorías.
 
-Currently, two official plugins are available:
+Permite filtrar productos por categoría para que sea más fácil encontrar lo que buscás.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Al hacer clic en un producto, podés ver todos sus detalles.
 
-## Expanding the ESLint configuration
+Podés elegir la cantidad que querés comprar antes de agregarlo al carrito (aunque por ahora el carrito no está funcionando del todo, es parte de las próximas entregas).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Navegación simple y amigable para moverse entre categorías y volver a la página principal.
+
+Incluye un carrito de compras (widget) que mostrará la cantidad de productos (en desarrollo).
+
+Tecnologías usadas
+React para crear la interfaz.
+
+React Router para manejar la navegación y las rutas dinámicas.
+
+Bootstrap para estilos y diseño responsivo.
+
+JavaScript moderno para la lógica y el manejo de datos.

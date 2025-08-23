@@ -1,0 +1,29 @@
+/* Contenedor principal del carrito */
+.cart-container {
+    margin-top: 2rem;
+}
+
+/* Lista de productos */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Imagen del producto */
+.cart-item img {
+    width: 10rem;
+}
+
+/* Contenedor de botones al final */
+.cart-buttons {
+    margin-top: 1rem;
+}
+
+/* Botón con espacio entre ellos */
+.cart-buttons .btn + .btn {
+    margin-left: 0.5rem;
+}
