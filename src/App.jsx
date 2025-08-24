@@ -1,4 +1,6 @@
-// Importamos los estilos de Bootstrap y nuestro propio CSS
+// agrego para ver si anda
+// // Importamos los estilos de Bootstrap y nuestro propio CSS
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
