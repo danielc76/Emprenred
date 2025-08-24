@@ -1,6 +1,5 @@
 
 // src/components/Checkout.jsx
-// agrego para ver si anda
 import React from "react";
 
 const Checkout = () => {

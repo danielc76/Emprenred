@@ -1,4 +1,3 @@
-// agrego para ver si anda
 // // Importamos los estilos de Bootstrap y nuestro propio CSS
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
-import Checkout from './components/Checkout';
+import Checkout from './components/CheckOut';
 
 function App() {
   return (
