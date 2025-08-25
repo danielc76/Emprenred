@@ -14,7 +14,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { CartProvider } from './context/CartContext';
 import Cart from './components/Cart';
-import Checkout from './components/CheckOut';
+import CheckOutForm from './components/CheckOutForm';
 
 function App() {
   return (
@@ -53,8 +53,8 @@ function App() {
 
           {/* Ruta para checkout */}
           <Route
-            path="/checkout"
-            element={<Checkout />}
+            path="/CheckOutForm"
+            element={<CheckOutForm />}
           />
 
           {/* Ruta para cuando el usuario escribe mal una dirección, muestra error 404 */}

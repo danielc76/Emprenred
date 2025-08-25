@@ -1,14 +1,14 @@
 
-// src/components/Checkout.jsx
+// src/components/CheckOutForm.jsx
 import React from "react";
 
-const Checkout = () => {
+const CheckOutForm = () => {
   return (
     <div className="p-4">
-      <h2>Checkout</h2>
+      <h2>CheckOutForm</h2>
       <p>Aquí irá el formulario de compra.</p>
     </div>
   );
 };
 
-export default Checkout;
+export default CheckOutForm;
