@@ -8,7 +8,7 @@ import { db } from "../service/firebase";
 import "./css/Home.css";
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 60 },
     visible: { opacity: 1, y: 0, transition: { duration: 1 } },
 }; // acá cuanto más suba la y, más tarda en aparecer, y cuanto más la duración, más lento
 
