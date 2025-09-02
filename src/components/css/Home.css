@@ -296,3 +296,21 @@
     font-weight: 700;
     margin-bottom: 1rem;
 }
+
+/* Home.css - Hero responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* apila texto arriba, imagen abajo */
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-text-container {
+        max-width: 100%;
+    }
+
+    .hero-img-left {
+        max-width: 90%; /* opcional: achicar la imagen en móvil */
+    }
+}
