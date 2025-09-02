@@ -1,62 +1,49 @@
 .item-detail-container {
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    padding: 1.5rem 2rem; /* más cerca del navbar */
 }
 
 .item-detail-card {
     display: flex;
     flex-wrap: wrap;
-    max-width: 900px;
+    max-width: 950px; /* un poco más ancha para móviles */
     width: 100%;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     overflow: hidden;
+    padding-bottom: 1.5rem; /* espacio para botones más cerca */
 }
 
 .item-detail-img {
-    flex: 1 1 300px;
+    flex: 1 1 280px; /* achicamos un poco la imagen */
     position: relative;
 }
 
 .item-detail-img img {
     width: 100%;
     height: auto;
-    max-height: 80vh; /* no superar altura de pantalla */
+    max-height: 65vh; /* un poco más baja */
     object-fit: contain; 
     display: block;
 }
 
-.item-soldout {
-    position: absolute;
-    top: 20px; 
-    left: -20px;
-    transform: rotate(-45deg);
-    background-color: rgba(0, 0, 80, 0.7);
-    color: #fff;
-    font-weight: bold;
-    padding: 0.5rem 1rem;  
-    font-size: 1.2rem;
-}
-
- 
 .item-soldout-detail {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 90%;  /* que no sobrepase el ancho de la imagen */
+    bottom: 10px; 
+    left: 0;
+    transform: translateY(-200%) rotate(0);
+    width: 100%;  
     background-color: rgba(0, 0, 80, 0.8);
     color: #fff;
     font-weight: bold;
-    padding: 0.6rem 0.8rem;  /* menos padding para móviles */
-    font-size: 2rem;
+    padding: 0.8rem 0;
+    font-size: 2rem; /* un poco más pequeño */
     text-align: center;
     z-index: 10;
-    border-radius: 6px;
+    border-radius: 6px;  
 }
-
 
 .item-detail-info {
     flex: 1 1 300px;
@@ -96,6 +83,7 @@
     .item-detail-card {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 2rem; /* más espacio abajo */
     }
 
     .item-detail-info {
@@ -103,13 +91,13 @@
     }
 
     .item-detail-img img {
-        max-height: 350px; /* más compacta en celus */
+        max-height: 300px; /* más compacta en celus */
         width: auto;       /* mantiene proporción */
     }
 
     .item-soldout-detail {
-        font-size: 1.5rem;
-        max-width: 95%;
-        padding: 0.4rem 0.6rem;
+        font-size: 1.6rem; /* ajusta tamaño del cartel en móviles */
+        padding: 0.6rem 0;
+        transform: translateY(-190%) rotate(0);
     }
 }
