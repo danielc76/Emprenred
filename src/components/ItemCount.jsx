@@ -31,7 +31,7 @@ const ItemCount = ({ stock, onAdd, disabled = false }) => {
 
   const handleContinue = () => {
     setShowModal(false);
-    navigate("/"); // vuelve al Home
+    navigate("/tienda"); // vuelve al Home
     setCantidad(1); // resetea cantidad
   };
 
