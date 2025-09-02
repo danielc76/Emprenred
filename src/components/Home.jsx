@@ -5,7 +5,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../service/firebase";
+import ProductosDestacados from "./ProductosDestacados";
 import "./css/Home.css";
+import EmprendedoresDestacados from "./EmprendedoresDestacados";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 90 },
@@ -100,6 +102,10 @@ const Home = () => {
                 />
             </motion.section>
 
+            {/* Productos Destacados */}
+            <h2 className="violet centered-title">Productos Destacados</h2>
+            <ProductosDestacados />
+
             {/* Qué es EmprenRed */}
             <motion.section
                 className="about"
@@ -184,43 +190,8 @@ const Home = () => {
             </motion.section>
 
             {/* Emprendimientos destacados */}
-            <motion.section
-                className="featured-entrepreneurs"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-            >
-                <h2 className="violet">Emprendimientos destacados</h2>
-
-                <div className="carousel-container">
-                    <button className="carousel-btn prev" onClick={() => scrollCarousel(-1)}>
-                        &#10094;
-                    </button>
-                    <div className="carousel" ref={carouselRef}>
-                        {emprendedoresData.length > 0 ? (
-                            emprendedoresData.map((emp) => (
-                                <motion.div
-                                    key={emp.id}
-                                    className="card"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6 }}
-                                >
-                                    <Link to={`/emprendedor/${emp.nombreEmprendimiento}`}>
-                                        <img src={`/assets/img/${emp.foto}`} alt={emp.nombreEmprendimiento} />
-                                        <h3>{emp.nombreEmprendimiento}</h3>
-                                    </Link>
-                                </motion.div>
-                            ))
-                        ) : (
-                            <p>No hay emprendimientos destacados disponibles.</p>
-                        )}
-                    </div>
-                    <button className="carousel-btn next" onClick={() => scrollCarousel(1)}>
-                        &#10095;
-                    </button>
-                </div>
+            <motion.section>
+                <EmprendedoresDestacados />
             </motion.section>
 
             {/* Footer */}

@@ -1,0 +1,75 @@
+.productos-destacados-container {
+  max-width: 1200px;   /* ancho máximo del carrusel */
+  margin: 0 auto;       /* centra horizontalmente */
+  overflow: hidden;     /* evita scroll horizontal extra */
+}
+
+
+.product-image {
+  width: 100%;              /* ocupa todo el ancho de la tarjeta */
+  max-width: 200px;         /* limita el tamaño máximo */
+  height: 200px;            /* altura uniforme */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;           /* centra horizontalmente */
+}
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* centra horizontalmente */
+  justify-content: flex-start;
+  width: 200px;              /* mismo ancho que la imagen */
+  height: 280px;             /* altura uniforme */
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.card h3 {
+  text-align: center;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* máximo 2 líneas */
+  -webkit-box-orient: vertical;
+}
+
+.card:hover .product-image {
+  transform: scale(1.1);
+}
+
+/* Flechas del carrusel */
+.slick-arrow {
+  background: rgba(79, 70, 229, 0.8);
+  color: white;
+  border-radius: 0.5rem;
+  width: 3rem;     
+  height: 3rem;    
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.slick-arrow:hover {
+  background: #4F46E5;
+  transform: scale(1.2);
+}
+
+.slick-prev { left: -1rem; }
+.slick-next { right: -1rem; }
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;  /* centra cada slide en su contenedor */
+  flex-direction: column;
+  height: auto;
+}
+
+/* Ajuste responsive para pantallas chicas */
+@media (max-width: 768px) {
+  .slick-prev { left: 0.5rem; }
+  .slick-next { right: 0.5rem; }
+  .slick-arrow { width: 2.5rem; height: 2.5rem; }
+}

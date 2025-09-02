@@ -5,6 +5,14 @@
     padding-top: 2rem;
 }
 
+h1, h2 {
+    font-weight: 700; /* negrita extra */
+}
+
+.centered-title {
+    text-align: center;
+}
+
 /* Toast */
 .toast-container {
     position: fixed;

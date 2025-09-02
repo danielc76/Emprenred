@@ -1,0 +1,88 @@
+/* EmprendedoresDestacados.css */
+.emprendedores-destacados-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.emprendedor-image {
+  width: 100%;
+  max-width: 400px;   /* mucho más grande */
+  height: 250px;      /* altura uniforme */
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 400px;      /* coincide con max-width de la imagen */
+  height: 320px;     /* altura uniforme de la tarjeta */
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+
+.card h3 {
+  text-align: center;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card:hover .emprendedor-image {
+  transform: scale(1.05);
+}
+
+/* Flechas del carrusel */
+.slick-arrow {
+  background: rgba(79, 70, 229, 0.8);
+  color: white;
+  border-radius: 0.5rem;
+  width: 3rem;     
+  height: 3rem;    
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.slick-arrow:hover {
+  background: #4F46E5;
+  transform: scale(1.2);
+}
+
+.slick-prev { left: -1rem; }
+.slick-next { right: -1rem; }
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .emprendedor-image, .card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .emprendedor-image, .card {
+    width: 250px;
+  }
+  .slick-prev { left: 0.5rem; }
+  .slick-next { right: 0.5rem; }
+  .slick-arrow { width: 2.5rem; height: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+  .emprendedor-image, .card {
+    width: 200px;
+  }
+}
