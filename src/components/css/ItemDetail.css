@@ -43,20 +43,19 @@
  
 .item-soldout-detail {
     position: absolute;
-    bottom: 10px; 
-    left: 0;
-    transform: translateY(-210%) rotate(0);
-    width: 100%;  
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 90%;  /* que no sobrepase el ancho de la imagen */
     background-color: rgba(0, 0, 80, 0.8);
     color: #fff;
     font-weight: bold;
-    padding: 1rem 0;
-    font-size: 2.5rem;
+    padding: 0.6rem 0.8rem;  /* menos padding para móviles */
+    font-size: 2rem;
     text-align: center;
     z-index: 10;
-    border-radius: 6;  
+    border-radius: 6px;
 }
-
 
 
 .item-detail-info {
@@ -109,8 +108,8 @@
     }
 
     .item-soldout-detail {
-        font-size: 1.8rem; /* ajusta tamaño del cartel en móviles */
-        padding: 0.8rem 0;
-        transform: translateY(-200%) rotate(0);
+        font-size: 1.5rem;
+        max-width: 95%;
+        padding: 0.4rem 0.6rem;
     }
 }

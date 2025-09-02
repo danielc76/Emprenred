@@ -137,7 +137,7 @@ const CheckOutForm = () => {
       ) : (
         // Formulario de datos del comprador
         <form onSubmit={finalizarCompra} className="space-y-3">
-          <h2 className="text-lg font-semibold mb-3">Completa tus datos</h2>
+          <h2 className="text-lg font-semibold mb-3">Completá tus datos</h2>
 
           <input
             className={`form-control mb-3 ${error && !buyer.name.trim() ? "is-invalid" : ""}`}
