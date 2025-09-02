@@ -1,29 +1,185 @@
 /* Contenedor principal del carrito */
 .cart-container {
     margin-top: 2rem;
+    padding: 1rem;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Título */
+.cart-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #4B0082; /* violeta oscuro, coherente con el resto */
+    margin-bottom: 1rem;
 }
 
 /* Lista de productos */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* usamos separador por border en cada item */
+}
+
 .cart-item {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     width: 100%;
-    padding: 2rem;
-    border-bottom: 1px solid #ccc;
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid #e6e6e6; /* línea separadora entre producto y producto */
+    background: #ffffff;
+    transition: background 0.15s ease, transform 0.12s ease;
+}
+
+/* Hover  */
+.cart-item:hover {
+    background: #fbfbfe;
+    transform: translateY(-2px);
 }
 
 /* Imagen del producto */
-.cart-item img {
-    width: 10rem;
+.cart-img-wrap {
+    flex: 0 0 96px; /* ancho fijo para mantener consistencia */
+    height: 110px; /* altura contenida para imágenes verticales */
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7fb;
+    box-shadow: 0 2px 6px rgba(11,20,40,0.04);
+}
+
+/* Imagen reducida y con efecto hover (zoom suave + sombra) */
+.cart-img {
+    width: 88px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* Hover sobre la imagen */
+.cart-img-wrap:hover .cart-img {
+    transform: scale(1.06);
+    box-shadow: 0 8px 22px rgba(11,20,40,0.12);
+}
+
+/* Contenedor de info principal (nombre + emprendedor) */
+.cart-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    flex: 1 1 auto; /* ocupa espacio disponible manteniendo todo en línea */
+    min-width: 0; 
+}
+
+/* Nombre del producto */
+.cart-name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #111827;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Nombre del emprendedor */
+.cart-emprendedor {
+    font-size: 0.88rem;
+    color: #6b21a8; /* violeta tenue para destacar emprendedor */
+    font-style: italic;
+}
+
+/* Meta (precio, qty, subtotal) alineado a la derecha */
+.cart-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    min-width: 140px;
+}
+
+/* Estilos individuales  */
+.cart-price, .cart-qty, .cart-subtotal {
+    font-size: 0.95rem;
+    color: #374151;
+}
+
+/* Precio final destacado */
+.cart-subtotal {
+    font-weight: 700;
+    color: #111827;
+}
+
+/* Botón de eliminar */
+.cart-remove {
+    margin-left: 0.75rem;
+    background: #ef4444;
+    border: none;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease;
+}
+
+/* Hover del botón eliminar */
+.cart-remove:hover {
+    transform: translateY(-2px);
+    background: #dc2626;
 }
 
 /* Contenedor de botones al final */
 .cart-buttons {
     margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
 }
 
 /* Botón con espacio entre ellos */
 .cart-buttons .btn + .btn {
     margin-left: 0.5rem;
+}
+
+/* Total a pagar */
+.cart-total {
+    margin-top: 1rem;
+    text-align: right;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+    .cart-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.8rem;
+    }
+
+    .cart-meta {
+        min-width: 110px;
+        align-items: flex-end;
+    }
+
+    .cart-img-wrap {
+        flex: 0 0 80px;
+        height: 90px;
+    }
+
+    .cart-img {
+        width: 72px;
+    }
+
+    .cart-name {
+        font-size: 0.98rem;
+    }
 }
