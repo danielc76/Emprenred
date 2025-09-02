@@ -43,7 +43,7 @@
  
 .item-soldout-detail {
     position: absolute;
-    bottom: 10px; /* un poco más abajo */
+    bottom: 10px; 
     left: 0;
     transform: translateY(-210%) rotate(0);
     width: 100%;  

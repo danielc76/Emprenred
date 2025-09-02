@@ -73,7 +73,7 @@ const ItemCount = ({ stock, onAdd, disabled = false }) => {
         <Toast.Body>Agregaste {cantidad} unidades al carrito</Toast.Body>
       </Toast>
 
-      {/* Modal tipo la profe */}
+      {/* Modal*/}
       {showModal && (
         <div
           className="position-fixed top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center"

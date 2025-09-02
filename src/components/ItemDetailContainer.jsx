@@ -30,8 +30,7 @@ const ItemDetailContainer = () => {
                 if (res.data()) {
                     setDetalle({ id: res.id, ...res.data() });
                 } else {
-                    setError(true);
-                    //  navigate('/notFound')
+                    setError(true);                   
                 }
             })
             .catch((error) => console.log(error))

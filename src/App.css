@@ -29,12 +29,12 @@ html, body, #root {
 
 /* Estilo para el saludo (h1 o clase específica) */
 .saludo {
-  font-size: 1.6rem; /* un poquito más pequeño */
+  font-size: 1.6rem;  
   text-align: center;
   margin: 1rem 0;
   font-weight: 700;
    /* Color de respaldo */
-  color: #ff8c00; /* naranja más fuerte para contraste si no hay gradiente */
+  color: #ff8c00;  
   /* Gradiente de texto */
   background: linear-gradient(90deg, #ff7e5f, #feb47b); /* colores más contrastantes */
   -webkit-background-clip: text;

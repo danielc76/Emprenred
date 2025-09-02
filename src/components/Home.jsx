@@ -28,9 +28,9 @@ const Home = () => {
         }
     };
 
-    // Auto-slide cada 4 segundos
+    // Auto-slide cada 2 segundos
     useEffect(() => {
-        const interval = setInterval(() => scrollCarousel(1), 4000);
+        const interval = setInterval(() => scrollCarousel(1), 2000);
         return () => clearInterval(interval);
     }, [emprendedoresData]);
 

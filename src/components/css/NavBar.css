@@ -57,7 +57,6 @@
   font-weight: 700; /* Negrita */
 }
 
-/* Aplicar violeta también al logo "EmprenRed" cuando está en la ruta "/" */
 .navbar-custom .navbar-brand.active .navbar-title {
   color: #3B2F8C; /* Violeta oscuro */
   font-weight: 700; /* Negrita */

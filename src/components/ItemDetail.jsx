@@ -8,7 +8,7 @@ const ItemDetail = ({ detalle }) => {
     const { addToCart } = useContext(CartContext);
 
     const onAdd = (cantidad) => {
-        if (detalle.stock === 0) return; // 🔹 Evitamos agregar si está agotado
+        if (detalle.stock === 0) return; // No agregar si está agotado
         addToCart(
             {
                 id: detalle.id,
@@ -34,7 +34,7 @@ const ItemDetail = ({ detalle }) => {
                         alt={detalle.name}
                     />
                     {detalle.stock === 0 && (
-                        <div className="item-soldout-detail">AGOTADO</div> // 🔹 clase nueva
+                        <div className="item-soldout-detail">AGOTADO</div>  
                     )}
                 </div>
                 <div className="item-detail-info">

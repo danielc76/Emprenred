@@ -58,7 +58,6 @@ export const CartProvider = ({ children }) => {
 
   // Calcular el total a pagar
   const getCartTotal = () => {
-    // Ojo: por si algunos productos vienen con 'precio' en lugar de 'price'
     return cart.reduce(
       (acc, item) => acc + (item.price ?? item.precio) * item.quantity,
       0

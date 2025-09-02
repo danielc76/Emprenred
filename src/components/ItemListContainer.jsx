@@ -25,8 +25,9 @@ const ItemListContainer = ({ saludo }) => {
   const [emprendedorData, setEmprendedorData] = useState(null);
 
   const { category, emprendedor, localidad } = useParams();
-  const ModoAdmin = false; // ahora lo dejamos true para mostrar los botones admin
+  const ModoAdmin = false; // PASAR A TRUE PARA VER BOTONES ADMIN
 
+  // EfFect para traer productos según filtros
   useEffect(() => {
     setLoading(true);
     setError(null);
