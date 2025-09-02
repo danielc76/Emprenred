@@ -16,6 +16,9 @@ function NavBar() {
   const [emprendedores, setEmprendedores] = useState([]);
   const [localidades, setLocalidades] = useState([]);
 
+  // Control del collapse para móvil
+  const [expanded, setExpanded] = useState(false);
+
   // Para detectar la ruta actual y aplicar estilo activo al logo
   const location = useLocation();
 
@@ -48,19 +51,20 @@ function NavBar() {
   }, []);
 
   return (
-    <Navbar expand="lg" className="navbar-custom fixed-top">
+    <Navbar expand="lg" expanded={expanded} className="navbar-custom fixed-top">
       <Container style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Logo + nombre */}
         <Navbar.Brand
           as={NavLink}
           to="/"
           className={location.pathname === "/" ? "active" : ""}
+          onClick={() => setExpanded(false)}
         >
           <img src="/loguito.gif" alt="logo" className="navbar-logo" />
           <span className="navbar-title ms-2">EmprenRed</span>
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {/* Tienda */}
@@ -68,6 +72,7 @@ function NavBar() {
               as={NavLink}
               to="/tienda"
               className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={() => setExpanded(false)}
             >
               Tienda
             </Nav.Link>
@@ -80,6 +85,7 @@ function NavBar() {
                   as={NavLink}
                   to={`/categories/${encodeURIComponent(cat.toLowerCase())}`}
                   className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setExpanded(false)}
                 >
                   {cat}
                 </NavDropdown.Item>
@@ -94,6 +100,7 @@ function NavBar() {
                   as={NavLink}
                   to={`/emprendedor/${encodeURIComponent(emp)}`}
                   className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setExpanded(false)}
                 >
                   {emp}
                 </NavDropdown.Item>
@@ -108,6 +115,7 @@ function NavBar() {
                   as={NavLink}
                   to={`/localidad/${encodeURIComponent(loc)}`}
                   className={({ isActive }) => (isActive ? "active" : "")}
+                  onClick={() => setExpanded(false)}
                 >
                   {loc}
                 </NavDropdown.Item>

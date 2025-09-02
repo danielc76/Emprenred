@@ -1,5 +1,3 @@
-/* NavBar.css */
-
 /* Estilo general del navbar */
 .navbar-custom {
   background-color: #fff1dc; /* Fondo beige claro */
@@ -57,7 +55,30 @@
   font-weight: 700; /* Negrita */
 }
 
+/* Logo activo */
 .navbar-custom .navbar-brand.active .navbar-title {
   color: #3B2F8C; /* Violeta oscuro */
   font-weight: 700; /* Negrita */
+}
+
+/* Ajustes móviles: menú desplegable ocupa todo el ancho y padding extra */
+@media (max-width: 991px) {
+  .navbar-custom .navbar-collapse {
+    background-color: #fff1dc; /* Misma base que navbar */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .navbar-custom .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    margin: 0.5rem 0;
+  }
+
+  .navbar-custom .dropdown-item {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
