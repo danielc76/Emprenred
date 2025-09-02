@@ -16,7 +16,7 @@ function NavBar() {
   const [emprendedores, setEmprendedores] = useState([]);
   const [localidades, setLocalidades] = useState([]);
 
-  // Control del collapse para móvil
+  // Control del collapse para celulares
   const [expanded, setExpanded] = useState(false);
 
   // Para detectar la ruta actual y aplicar estilo activo al logo
@@ -93,7 +93,7 @@ function NavBar() {
             </NavDropdown>
 
             {/* Menú Emprendedores */}
-            <NavDropdown title="Emprendedores" id="nav-emprendedores">
+            <NavDropdown title="Emprendimientos" id="nav-emprendedores">
               {emprendedores.map((emp, i) => (
                 <NavDropdown.Item
                   key={i}

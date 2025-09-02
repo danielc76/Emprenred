@@ -98,7 +98,19 @@
         flex-direction: column;
         align-items: center;
     }
+
     .item-detail-info {
         text-align: center;
+    }
+
+    .item-detail-img img {
+        max-height: 350px; /* más compacta en celus */
+        width: auto;       /* mantiene proporción */
+    }
+
+    .item-soldout-detail {
+        font-size: 1.8rem; /* ajusta tamaño del cartel en móviles */
+        padding: 0.8rem 0;
+        transform: translateY(-200%) rotate(0);
     }
 }

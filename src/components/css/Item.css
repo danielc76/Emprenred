@@ -85,11 +85,10 @@
   }
 
   .product-img {
-    width: auto;
-    height: auto;
+    width: 100%;       /* ocupa todo el ancho de la card */
+    height: 300px;     
+    object-fit: cover; /* mantiene proporción y recorta si hace falta */
     max-width: 100%;
-    max-height: 300px;
-    object-fit: contain;
   }
 
   .sold-out-banner {

@@ -26,7 +26,7 @@ const CartView = () => {
                             <span className="cart-name">{compra.name}</span>
 
                             <span className="cart-emprendedor">
-                                {compra.emprendedor ? `Emprendedor: ${compra.emprendedor}` : ''}
+                                {compra.emprendedor ? `Emprendimiento: ${compra.emprendedor}` : ''}
                             </span>
                         </div>
 
