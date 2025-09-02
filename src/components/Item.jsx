@@ -1,24 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Item.css"; // animación + estilos de la card
+import "./css/Item.css";
 
 const Item = ({ prod, index = 0 }) => {
-  if (!prod) return null; // seguridad por si algo viene indefinido
+  if (!prod) return null;
 
   return (
     <div className="product-card" style={{ animationDelay: `${index * 0.1}s` }}>
-      {/* Imagen del producto */}
-      <img
-        className="product-img"
-        src={prod.foto ? `/${prod.foto}` : "/assets/img/placeholder.jpg"}
-        alt={prod.name || "Producto"}
-      />
+      <div className="image-container">
+        <img
+          className="product-img"
+          src={prod.foto ? `/${prod.foto}` : "/assets/img/placeholder.jpg"}
+          alt={prod.name || "Producto"}
+        />
+        {prod.stock === 0 && <div className="sold-out-banner">AGOTADO</div>}
+      </div>
 
-      {/* Info del producto */}
       <h5 className="product-title">{prod.name || "Sin nombre"}</h5>
       <p className="product-price">${prod.precio ?? "0"}</p>
 
-      {/* Link a detalle */}
       <Link className="btn btn-primary" to={`/item/${prod.id || "#"}`}>
         Ver detalle
       </Link>

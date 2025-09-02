@@ -1,24 +1,60 @@
-Emprenred
-Emprenred es una tienda online pensada para apoyar a emprendedores y que puedas encontrar productos artesanales, tecnológicos, ropa, alimentos y más, todo hecho con dedicación y pasión.
+# EmprenRed ğŸ›’
 
-Qué hace esta app
-Muestra productos de diferentes categorías.
+**EmprenRed** no es un ecomerce simulado, sino una plataforma pensada para estudiantes que quieren **vender sus productos y servicios mientras estudian**. 
 
-Permite filtrar productos por categoría para que sea más fácil encontrar lo que buscás.
+Esta primera versiÃ³n funciona como una demostraciÃ³n interactiva; prÃ³ximamente se implementarÃ¡ como una plataforma completa.
 
-Al hacer clic en un producto, podés ver todos sus detalles.
 
-Podés elegir la cantidad que querés comprar antes de agregarlo al carrito (aunque por ahora el carrito no está funcionando del todo, es parte de las próximas entregas).
 
-Navegación simple y amigable para moverse entre categorías y volver a la página principal.
+---
 
-Incluye un carrito de compras (widget) que mostrará la cantidad de productos (en desarrollo).
+### InstalaciÃ³n âš™ï¸
 
-Tecnologías usadas
-React para crear la interfaz.
+1. Clonar el repositorio.  
+2. Ingresar a la carpeta del proyecto:  
+   cd emprenred  
+3. Instalar dependencias:  
+   npm install  
+4. Levantar la app en el servidor local:  
+   npm run dev
 
-React Router para manejar la navegación y las rutas dinámicas.
+---
 
-Bootstrap para estilos y diseño responsivo.
+### VersiÃ³n online ğŸ’»
 
-JavaScript moderno para la lógica y el manejo de datos.
+PrÃ³ximamente se podrÃ¡ acceder a la plataforma completa online.  
+Actualmente, esta versiÃ³n funciona como un prototipo interactivo.
+
+---
+
+### LibrerÃ­as utilizadas ğŸ“–
+
+- React: para construir la interfaz de usuario.  
+- React Router Dom: para la navegaciÃ³n entre rutas.  
+- Framer Motion: para animaciones y transiciones dinÃ¡micas.  
+- React Toastify: para notificaciones y alertas interactivas.  
+- Firebase: como base de datos para almacenar emprendedores, productos y categorÃ­as.
+
+---
+
+### Funcionalidades principales âœ¨
+
+- Landing interactiva con secciones Hero, QuÃ© es EmprenRed, Impacto social, Centros de estudiantes, Productos destacados y Footer.
+- Animaciones suaves con framer-motion para mejorar la experiencia de usuario.
+- CatÃ¡logo de productos dinÃ¡mico en carrusel horizontal.
+- Productos asociados a cada emprendedor, con foto, descripciÃ³n y precio.
+- RedirecciÃ³n al detalle de cada producto al hacer clic en la card.
+- MenÃº de navegaciÃ³n con filtros por categorÃ­a, emprendedor o localidad, cargados desde Firebase.
+- Carrito de compras con estado global usando CartContext.
+- Checkout con formulario validado.
+- Notificaciones con react-toastify para secciones en construcciÃ³n.
+- Responsive design optimizado para mÃ³viles y desktop usando Bootstrap y CSS personalizado.
+- Footer con botones SubÃ­ tu producto, Unite ahora, SumÃ¡ tu centro de estudiantes activando toast informativo.
+- IntegraciÃ³n con Firebase para lectura de datos de emprendedores y productos.
+
+
+---
+
+### Autor ğŸ‘¨â€ğŸ’»
+
+Desarrollado por el Ing. Daniel Cardaci

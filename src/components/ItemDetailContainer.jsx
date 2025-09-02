@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
     const { id } = useParams();
 
     // Traemos la función para agregar productos al carrito desde el contexto
-    const { addItem } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
 
     useEffect(() => {
         setLoading(true);
@@ -45,7 +45,7 @@ const ItemDetailContainer = () => {
     // Función que se pasa a ItemDetail para agregar el producto al carrito
     const handleAgregarAlCarrito = (cantidad) => {
         // Le pasamos el detalle completo del producto y la cantidad
-        addItem({ ...detalle, quantity: cantidad });
+        addToCart({ ...detalle }, cantidad);
     };
 
     return <ItemDetail detalle={detalle} onAdd={handleAgregarAlCarrito} />;

@@ -1,0 +1,20 @@
+/* Container de cards */
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* separación entre cards */
+}
+
+/* Desktop: distribuir espacio entre cards */
+@media (min-width: 577px) {
+  .item-list {
+    justify-content: space-evenly;
+  }
+}
+
+/* Mobile: centramos las cards, respetando su tamaño vertical */
+@media (max-width: 576px) {
+  .item-list {
+    justify-content: center;
+  }
+}

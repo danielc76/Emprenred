@@ -2,10 +2,11 @@ import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 // Importamos los estilos del componente
-import './CartView.css'
+import './css/CartView.css'
 
 const CartView = () => {
-    const { cart, clear, removeItem, cartTotal } = useContext(CartContext)
+    // Traemos las funciones y el estado directamente del context
+    const { cart, clearCart, removeFromCart, getCartTotal } = useContext(CartContext)
 
     return (
         <div className="cart-container">
@@ -20,18 +21,18 @@ const CartView = () => {
                         <span>${compra.price},00</span>
                         <span>unidades: {compra.quantity}</span>
                         <span>precio final: ${compra.price * compra.quantity},00</span>
-                        <button className='btn btn-danger' onClick={() => removeItem(compra.id)}>X</button>
+                        <button className='btn btn-danger' onClick={() => removeFromCart(compra.id)}>X</button>
                     </div>
                 ))}
             </div>
 
             {/* Total a pagar */}
-            <h4>Total a pagar: ${cartTotal()},00</h4>
+            <h4>Total a pagar: ${getCartTotal()},00</h4>
 
             {/* Botones para limpiar carrito o finalizar compra */}
             <div className="cart-buttons">
-                <button className='btn btn-danger' onClick={clear}>Borrar Carrito</button>
-                <Link className='btn btn-success' to='/checkout'>Terminar Compra</Link>
+                <button className='btn btn-danger' onClick={clearCart}>Borrar Carrito</button>
+                <Link className='btn btn-success' to='/CheckOutForm'>Terminar Compra</Link>
             </div>
         </div>
     )

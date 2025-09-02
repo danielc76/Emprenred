@@ -1,0 +1,64 @@
+/* NavBar.css */
+
+/* Estilo general del navbar */
+.navbar-custom {
+  background-color: #fff1dc; /* Fondo beige claro */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo */
+.navbar-logo {
+  height: 3rem;
+  transition: filter 0.3s ease;
+}
+.navbar-logo:hover {
+  filter: drop-shadow(0 0 5px #4F46E5aa);
+}
+
+/* Nombre del sitio junto al logo */
+.navbar-title {
+  font-size: 1.25rem;
+  color: #4F46E5; /* Color violeta */
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Links del navbar */
+.navbar-custom .nav-link {
+  color: #1F2937; /* Gris oscuro para links normales */
+  font-weight: 500;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Links activos y hover */
+.navbar-custom .nav-link.active,
+.navbar-custom .nav-link:hover {
+  color: #3B2F8C; /* Violeta oscuro */
+  font-weight: 700; /* Negrita */
+}
+
+/* Dropdown */
+.navbar-custom .dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Items del dropdown */
+.navbar-custom .dropdown-item {
+  transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Items del dropdown hover y activos */
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item.active {
+  background-color: #f0f0f0;
+  color: #3B2F8C; /* Violeta oscuro */
+  font-weight: 700; /* Negrita */
+}
+
+/* Aplicar violeta también al logo "EmprenRed" cuando está en la ruta "/" */
+.navbar-custom .navbar-brand.active .navbar-title {
+  color: #3B2F8C; /* Violeta oscuro */
+  font-weight: 700; /* Negrita */
+}

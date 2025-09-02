@@ -1,4 +1,5 @@
 import Item from './Item';
+import './css/ItemList.css'; // para estilos de distribución
 
 const ItemList = ({ data }) => {
   // si no hay data, devolvemos algo simple (tu loader ya está en el container)
@@ -7,7 +8,7 @@ const ItemList = ({ data }) => {
   }
 
   return (
-    <div className="d-flex flex-wrap justify-content-start gap-3">
+    <div className="item-list d-flex flex-wrap">
       {data.map((prod, index) => (
         <Item key={prod.id} prod={prod} index={index} />
       ))}

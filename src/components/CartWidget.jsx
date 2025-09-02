@@ -3,14 +3,14 @@ import Badge from "react-bootstrap/Badge";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import './CartWidget.css'; // Importamos estilos separados
+import './css/CartWidget.css'; // Importamos estilos 
 
 const CartWidget = () => {
-  // Traemos los items del carrito desde el contexto
-  const { cartItems } = useContext(CartContext);
+  // Traemos el carrito desde el contexto
+  const { cart } = useContext(CartContext);
 
   // Calculamos la cantidad total de productos sumando la propiedad 'quantity' de cada item
-  const cantidad = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  const cantidad = cart.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     // Envolvemos todo en un Link para que al hacer clic vaya a /cart
@@ -18,7 +18,11 @@ const CartWidget = () => {
       <BsCart4 size={24} /> {/* Ícono del carrito */}
       
       {/* Mostramos el badge solo si hay productos en el carrito */}
-      {cantidad > 0 && <Badge bg="danger" className="cart-badge">{cantidad}</Badge>} 
+      {cantidad > 0 && (
+        <Badge bg="danger" className="cart-badge">
+          {cantidad}
+        </Badge>
+      )}
     </Link>
   );
 };

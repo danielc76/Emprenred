@@ -1,0 +1,126 @@
+/* =======================
+   BOTONES ADMIN
+   ======================= */
+.admin-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.admin-btn-subir { background-color: #007bff; color: white; }
+.admin-btn-borrar { background-color: red; color: white; }
+.admin-btn-categorias { background-color: green; color: white; }
+.admin-btn-emprendedores { background-color: orange; color: white; }
+
+.admin-buttons button:hover { opacity: 0.85; }
+
+/* =======================
+   TARJETA EMPRENDEDOR
+   ======================= */
+.emprendedor-card {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+  background: linear-gradient(135deg, #fff1e6, #ffe4c4);
+  border-radius: 16px;
+  padding: 25px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.emprendedor-card img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.emprendedor-datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.emprendedor-datos h2 {
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+
+.descripcion {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.emprendedor-datos p {
+  margin: 3px 0;
+}
+
+/* =======================
+   PRODUCTOS
+   ======================= */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+
+/* =======================
+   Vinculos redes sociales
+   ======================= */
+.link-instagram, .link-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.link-instagram {
+  color: #E1306C;
+}
+
+.link-whatsapp {
+  color: #25D366;
+}
+
+.link-instagram:hover, .link-whatsapp:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+@media (max-width: 900px) {
+  .emprendedor-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .emprendedor-card img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+}
+

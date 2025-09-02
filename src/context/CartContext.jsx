@@ -1,6 +1,6 @@
 // Contexto global para manejar el carrito en toda la app
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // Creo el contexto del carrito, que luego voy a usar en toda la app
 export const CartContext = createContext(); // <-- agrego 'export' para poder importarlo nombrado
@@ -10,8 +10,16 @@ export const useCart = () => useContext(CartContext);
 
 // Provider: acá defino el "estado global" del carrito
 export const CartProvider = ({ children }) => {
+  // --- Recupero carrito persistido de LocalStorage ---
+  const prodLS = JSON.parse(localStorage.getItem("carrito")) || [];
+
   // Estado principal: lista de productos en el carrito
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(prodLS);
+
+  // --- Cada vez que cambia el carrito, lo guardo en LocalStorage ---
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(cart));
+  }, [cart]);
 
   // Agregar un producto al carrito
   const addToCart = (product, quantity = 1) => {
@@ -51,36 +59,22 @@ export const CartProvider = ({ children }) => {
   // Calcular el total a pagar
   const getCartTotal = () => {
     // Ojo: por si algunos productos vienen con 'precio' en lugar de 'price'
-    return cart.reduce((acc, item) => acc + (item.price ?? item.precio) * item.quantity, 0);
+    return cart.reduce(
+      (acc, item) => acc + (item.price ?? item.precio) * item.quantity,
+      0
+    );
   };
 
   // Acá paso todas las funciones y datos que quiero que estén disponibles en toda la app
   return (
     <CartContext.Provider
       value={{
-        cart,
-        addToCart,
-        removeFromCart,
-        clearCart,
-        getCartQuantity,
-        getCartTotal,
-
-        // --- Alias de compatibilidad para no romper componentes que ya usan estos nombres ---
-        // (los dejo a propósito para migrar tranquilo si hace falta)
-        cartItems: cart,                           // algunos componentes leen 'cartItems'
-        addItem: (product) => {                    // algunos llaman addItem(producto con {quantity})
-          const qty = product.quantity ?? 1;
-          const normalized = {
-            ...product,
-            // Normalizo claves por si vienen como 'precio' y 'foto' desde Firestore
-            price: product.price ?? product.precio,
-            img: product.img ?? product.foto,
-          };
-          addToCart(normalized, qty);
-        },
-        removeItem: removeFromCart,                // alias
-        clear: clearCart,                          // alias
-        cartTotal: getCartTotal,                   // alias
+        cart,             // lista de productos
+        addToCart,        // agregar producto
+        removeFromCart,   // eliminar producto
+        clearCart,        // vaciar carrito
+        getCartQuantity,  // cantidad total de productos
+        getCartTotal,     // total a pagar
       }}
     >
       {children}
